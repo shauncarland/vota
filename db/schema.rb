@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_23_040537) do
+ActiveRecord::Schema.define(version: 2019_02_23_043841) do
 
   create_table "bills", force: :cascade do |t|
     t.string "title"
@@ -65,6 +65,17 @@ ActiveRecord::Schema.define(version: 2019_02_23_040537) do
     t.string "last_name"
     t.index ["email"], name: "index_represenatives_on_email", unique: true
     t.index ["reset_password_token"], name: "index_represenatives_on_reset_password_token", unique: true
+  end
+
+  create_table "terms", force: :cascade do |t|
+    t.integer "represenative_id"
+    t.integer "district_id"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["district_id"], name: "index_terms_on_district_id"
+    t.index ["represenative_id"], name: "index_terms_on_represenative_id"
   end
 
 end

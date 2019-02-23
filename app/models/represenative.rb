@@ -5,4 +5,5 @@ class Represenative < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :bills
+  has_many :terms
 end
