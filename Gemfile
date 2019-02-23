@@ -66,3 +66,8 @@ gem 'bundler'
 gem 'devise'
 gem 'webpacker'
 gem 'react-rails'
+
+# Run against the latest stable release
+group :development, :test do
+  gem 'rspec-rails', '~> 3.8'
+end
