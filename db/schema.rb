@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_23_043841) do
+ActiveRecord::Schema.define(version: 2019_03_03_041532) do
 
   create_table "bills", force: :cascade do |t|
     t.string "title"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 2019_02_23_043841) do
     t.string "last_name"
     t.boolean "email_alerts", default: false
     t.boolean "text_alerts"
+    t.string "uuid"
     t.index ["email"], name: "index_constituents_on_email", unique: true
     t.index ["reset_password_token"], name: "index_constituents_on_reset_password_token", unique: true
   end
@@ -53,18 +54,14 @@ ActiveRecord::Schema.define(version: 2019_02_23_043841) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "represenatives", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
+  create_table "feature_flags", force: :cascade do |t|
+    t.string "name"
+    t.text "enabled_roles"
+    t.text "enabled_uuids"
+    t.integer "percentage"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "first_name"
-    t.string "last_name"
-    t.index ["email"], name: "index_represenatives_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_represenatives_on_reset_password_token", unique: true
+    t.index ["name"], name: "index_feature_flags_on_name"
   end
 
   create_table "terms", force: :cascade do |t|
