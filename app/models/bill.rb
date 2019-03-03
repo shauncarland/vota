@@ -1,3 +1,3 @@
 class Bill < ApplicationRecord
-  belongs_to :represenative
+  belongs_to :representative
 end
