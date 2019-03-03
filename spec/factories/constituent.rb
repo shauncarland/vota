@@ -4,5 +4,6 @@ FactoryBot.define do
     last_name { Faker::Name.last_name }
     email { Faker::Internet.email }
     password { Faker::Internet.password(10,20) }
+    uuid { SecureRandom.uuid }
   end
 end
