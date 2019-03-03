@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class RepresenativeTest < ActiveSupport::TestCase
+class RepresentativeTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
