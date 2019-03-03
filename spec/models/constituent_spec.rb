@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Constituent, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
-  let(:constituent) { FactoryBot.create(:constituent, email: "shaun@carland.com", password: "password") }
+  describe "creating a factory"
+  let!(:constituent) { FactoryBot.create(:constituent, email: "shaun@carland.com") }
 
   it "creates a consitituent from the factory" do
-    binding.pry
+    expect(constituent.email).to eq("shaun@carland.com")
   end
 end
