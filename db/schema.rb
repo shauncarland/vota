@@ -16,10 +16,10 @@ ActiveRecord::Schema.define(version: 2019_02_23_043841) do
     t.string "title"
     t.string "bill_url"
     t.string "summary"
-    t.integer "represenative_id"
+    t.integer "representative_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["represenative_id"], name: "index_bills_on_represenative_id"
+    t.index ["representative_id"], name: "index_bills_on_representative_id"
   end
 
   create_table "constituent_district_memberships", force: :cascade do |t|
@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 2019_02_23_043841) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "represenatives", force: :cascade do |t|
+  create_table "representatives", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -63,19 +63,19 @@ ActiveRecord::Schema.define(version: 2019_02_23_043841) do
     t.datetime "updated_at", null: false
     t.string "first_name"
     t.string "last_name"
-    t.index ["email"], name: "index_represenatives_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_represenatives_on_reset_password_token", unique: true
+    t.index ["email"], name: "index_representatives_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_representatives_on_reset_password_token", unique: true
   end
 
   create_table "terms", force: :cascade do |t|
-    t.integer "represenative_id"
+    t.integer "representative_id"
     t.integer "district_id"
     t.datetime "start_date"
     t.datetime "end_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["district_id"], name: "index_terms_on_district_id"
-    t.index ["represenative_id"], name: "index_terms_on_represenative_id"
+    t.index ["representative_id"], name: "index_terms_on_representative_id"
   end
 
 end

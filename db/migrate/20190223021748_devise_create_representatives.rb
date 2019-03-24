@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-class DeviseCreateRepresenatives < ActiveRecord::Migration[5.2]
+class DeviseCreateRepresentatives < ActiveRecord::Migration[5.2]
   def change
-    create_table :represenatives do |t|
+    create_table :representatives do |t|
       ## Database authenticatable
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
@@ -36,9 +36,9 @@ class DeviseCreateRepresenatives < ActiveRecord::Migration[5.2]
       t.timestamps null: false
     end
 
-    add_index :represenatives, :email,                unique: true
-    add_index :represenatives, :reset_password_token, unique: true
-    # add_index :represenatives, :confirmation_token,   unique: true
-    # add_index :represenatives, :unlock_token,         unique: true
+    add_index :representatives, :email,                unique: true
+    add_index :representatives, :reset_password_token, unique: true
+    # add_index :representatives, :confirmation_token,   unique: true
+    # add_index :representatives, :unlock_token,         unique: true
   end
 end
