@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
-  devise_for :constituents, path: 'constituents', controllers: { sessions: "constituents/sessions" }
-  # eg. http://localhost:3000/constituents/sign_in
-# <<<<<<< HEAD
-#
-# =======
 
-  devise_for :representatives, path: 'representatives', controllers: { sessions: "representatives/sessions" }
-  # eg. http://localhost:3000/representatives/sign_in
+  scope :devise do
+    devise_for :constituents, path: 'constituents', controllers: { sessions: "constituents/sessions" }
+    devise_for :representatives, path: 'representatives', controllers: { sessions: "representatives/sessions" }
+  end
 
-# >>>>>>> change-represenative-to-represenatives_WORKING
+  namespace :api do
+    namespace :v1 do
+      resources :representatives, only: [:index]
+    end
+  end
+
   root to: "welcome#index"
 end
