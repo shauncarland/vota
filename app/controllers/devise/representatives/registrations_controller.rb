@@ -6,7 +6,6 @@ class Representatives::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/sign_up
   def new
-    x = 1/0
     super
   end
 
