@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_30_005256) do
+ActiveRecord::Schema.define(version: 2019_03_30_005931) do
 
   create_table "bills", force: :cascade do |t|
     t.string "title"
@@ -52,6 +52,15 @@ ActiveRecord::Schema.define(version: 2019_03_30_005256) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "representative_profiles", force: :cascade do |t|
+    t.string "priorities"
+    t.string "motivations"
+    t.integer "representative_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["representative_id"], name: "index_representative_profiles_on_representative_id"
   end
 
   create_table "representatives", force: :cascade do |t|
