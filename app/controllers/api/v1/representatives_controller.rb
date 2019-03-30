@@ -10,6 +10,7 @@ module Api
       end
 
       def show
+        binding.pry
         render json: { page: "representatives_show" }
       end
     end
