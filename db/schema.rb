@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_03_070006) do
+ActiveRecord::Schema.define(version: 2019_03_30_005256) do
 
   create_table "bills", force: :cascade do |t|
     t.string "title"
@@ -65,6 +65,8 @@ ActiveRecord::Schema.define(version: 2019_03_03_070006) do
     t.string "first_name"
     t.string "last_name"
     t.string "uuid"
+    t.string "phone_number"
+    t.string "website"
     t.index ["email"], name: "index_representatives_on_email", unique: true
     t.index ["reset_password_token"], name: "index_representatives_on_reset_password_token", unique: true
   end
