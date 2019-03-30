@@ -7,13 +7,24 @@ module Api
       end
 
       def new
-        binding.pry
+        # binding.pry
         @representative = Representative.find(params[:representative_id])
         @representative_profile = RepresentativeProfile.new
       end
 
       def create
-        binding.pry
+        @representative = Representative.find(params[:representative_id])
+        @representative_profile = RepresentativeProfile.new
+        @representative_profile.representative = @representative
+        # binding.pry
+        @representative_profile.motivations = representative_profile_params[:motivations]
+        @representative_profile.priorities = representative_profile_params[:priorities]
+        @representative_profile.save!
+      end
+
+      private
+      def representative_profile_params
+        params.require(:representative_profile).permit(:motivations, :priorities)
       end
     end
   end
