@@ -6,6 +6,8 @@ class Representatives::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/sign_up
   def new
+    binding.pry
+    x = 1/0
     super
   end
 

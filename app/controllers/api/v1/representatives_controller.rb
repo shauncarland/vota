@@ -4,6 +4,10 @@ module Api
       def index
         render json: { foo: "bar" }
       end
+
+      def create
+        render json: { foo: "buzz" }
+      end
     end
   end
 end
