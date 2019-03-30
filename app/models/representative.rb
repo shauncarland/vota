@@ -6,5 +6,8 @@ class Representative < ApplicationRecord
 
   has_many :bills
   has_many :terms
-  has_one :representative_profiles
+  has_one :representative_profile
+
+  delegate :motivations, to: :representative_profile, allow_nil: true
+  delegate :priorities, to: :representative_profile, allow_nil: true
 end

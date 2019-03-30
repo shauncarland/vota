@@ -21,7 +21,7 @@ module Api
         @representative_profile.priorities = representative_profile_params[:priorities]
         @representative_profile.save!
 
-        binding.pry
+        # binding.pry
         redirect_to "/representatives/#{@representative.id}/"
       end
 

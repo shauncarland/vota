@@ -6,15 +6,17 @@ class Representatives::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/sign_up
   def new
-    binding.pry
-    x = 1/0
+    # binding.pry
+    # x = 1/0
+    binding.pry``
     super
   end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    binding.pry
+    super
+  end
 
   # GET /resource/edit
   # def edit
@@ -53,9 +55,10 @@ class Representatives::RegistrationsController < Devise::RegistrationsController
   # end
 
   # The path used after sign up.
-  # def after_sign_up_path_for(resource)
-  #   super(resource)
-  # end
+  def after_sign_up_path_for(resource)
+    binding.pry
+    super(resource)
+  end
 
   # The path used after sign up for inactive accounts.
   # def after_inactive_sign_up_path_for(resource)
