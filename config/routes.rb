@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   scope :devise do
     devise_for :constituents, path: 'constituents', controllers: { sessions: "constituents/sessions" }
-    devise_for :representatives, path: 'representatives', controllers: { sessions: "representatives/sessions" }
+    devise_for :representatives, path: 'representatives'
   end
 
   namespace :api do
