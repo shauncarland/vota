@@ -1,0 +1,17 @@
+<%#= form_with scope: :representative_profile, local: true do |form| %>
+<%#= form_with scope: :article, local: true do |form| %>
+<%= form_for [@representative, @representative_profile] do |form| %>
+  <p>
+    <%= form.label :motivations %><br>
+    <%= form.text_area :motivations %>
+  </p>
+
+  <p>
+    <%= form.label :priorities %><br>
+    <%= form.text_area :priorities %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

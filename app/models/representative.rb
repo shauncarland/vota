@@ -6,5 +6,5 @@ class Representative < ApplicationRecord
 
   has_many :bills
   has_many :terms
-  has_one :representative_profile
+  has_one :representative_profiles
 end
