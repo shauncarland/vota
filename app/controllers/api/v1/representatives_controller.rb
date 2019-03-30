@@ -8,6 +8,10 @@ module Api
       def create
         render json: { foo: "buzz" }
       end
+
+      def show
+        render json: { page: "representatives_show" }
+      end
     end
   end
 end
