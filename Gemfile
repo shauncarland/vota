@@ -75,3 +75,5 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 end
+
+gem 'foreman'
