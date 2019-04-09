@@ -4,6 +4,8 @@ class Representative < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  include DeviseTokenAuth::Concerns::User
+
   has_many :bills
   has_many :terms
   has_one :representative_profile

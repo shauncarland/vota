@@ -63,7 +63,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'bundler'
 
-gem 'devise'
 gem 'webpacker'
 gem 'react-rails'
 
@@ -77,3 +76,4 @@ group :development, :test do
 end
 
 gem 'foreman'
+gem 'devise_token_auth'

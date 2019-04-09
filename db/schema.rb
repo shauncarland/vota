@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_30_005931) do
+ActiveRecord::Schema.define(version: 2019_04_09_231908) do
 
   create_table "bills", force: :cascade do |t|
     t.string "title"
@@ -76,6 +76,14 @@ ActiveRecord::Schema.define(version: 2019_03_30_005931) do
     t.string "uuid"
     t.string "phone_number"
     t.string "website"
+    t.string "provider", default: "email", null: false
+    t.string "uid", default: "", null: false
+    t.boolean "allow_password_change", default: false
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "unconfirmed_email"
+    t.text "tokens"
     t.index ["email"], name: "index_representatives_on_email", unique: true
     t.index ["reset_password_token"], name: "index_representatives_on_reset_password_token", unique: true
   end
