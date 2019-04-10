@@ -1,6 +1,8 @@
 module Api
   module V1
-    class RepresentativesController < ApplicationController
+    class RepresentativesController < Api::V1::BaseController
+      include DeviseTokenAuth::Concerns::SetUserByToken
+
       def index
         # binding.pry
         render json: { foo: "bar" }

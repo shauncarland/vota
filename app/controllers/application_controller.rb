@@ -1,12 +1,15 @@
 class ApplicationController < ActionController::Base
   include DeviseTokenAuth::Concerns::SetUserByToken
   # protect_from_forgery with: :exception
-  # before_action do
-  #   binding.pry
-  # end
+  before_action do
+    # binding.pry
+    # :authenticate_representative!
+  end
+
+  # binding.pry
   devise_group :person, contains: [:representative, :constituent]
-  before_action :authenticate_person! # Ensure someone is logged in
-  #
+  # before_action :authenticate_representative!, except: [:create] # Ensure someone is logged in
+
   # protect_from_forgery with: :null_session
   before_action :configure_permitted_parameters, if: :devise_controller?
   protect_from_forgery
